@@ -1,0 +1,11 @@
+q2botcore++
+
+Here lies the remnants of an old port of Ben Scharzinger's Q2BotCore to Linux and Mac.
+
+Aside from the OS port there has been some work at parsing the gamestate into a C++
+object model. The intent was that this object model would be used as the environment
+in which genetically programmed bots would evolve within.
+
+I lost the change history in a borked SVN repo.
+
+Still compiles!

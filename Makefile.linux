@@ -1,0 +1,47 @@
+.SUFFIXES: .cc .class .java .cxx .C .cpp .o .c .l .y
+
+
+VPATH = .
+CC = gcc
+CPP = g++
+CC_FLAGS =      
+CPP_FLAGS =  -g   -fpic 
+CC_INCLUDES = 
+CPP_INCLUDES = -I.
+CC_DEFINES = 
+CPP_DEFINES = 
+libq2botcore.so_LIBS = 
+LINKER = g++
+LINKER_FLAGS = -shared -lpthread
+LINKER_ENTRY = 
+libq2botcore.so_OBJECTS = network.o server.o util.o
+
+all: libq2botcore.so
+
+libq2botcore.so: $(libq2botcore.so_OBJECTS)
+	$(LINKER) -o libq2botcore.so $(LINKER_ENTRY) $(LINKER_FLAGS) $(libq2botcore.so_OBJECTS) $(libq2botcore.so_LIBS)
+
+.c.o:
+	$(CC) -c $< $(CC_FLAGS) $(CC_DEFINES) $(CC_INCLUDES)
+.cpp.o:
+	$(CPP) -c $< $(CPP_FLAGS) $(CPP_DEFINES) $(CPP_INCLUDES)
+.C.o:
+	$(CPP) -c $< $(CPP_FLAGS) $(CPP_DEFINES) $(CPP_INCLUDES)
+.cc.o:
+	$(CPP) -c $< $(CPP_FLAGS) $(CPP_DEFINES) $(CPP_INCLUDES)
+.cxx.o:
+	$(CPP) -c $< $(CPP_FLAGS) $(CPP_DEFINES) $(CPP_INCLUDES)
+
+## dependency generation
+%.d : %.c
+	@$(CC) -MM $(CC_INCLUDES) $< | sed 's/\($(basename $(notdir $<))\)\.o[ :]*/\1.o $(notdir $@) : /g' > $@
+
+%.d : %.cpp
+		@$(CXX) -MM $(CPP_INCLUDES) $< | sed 's/\($(basename $(notdir $<))\)\.o[ :]*/\1.o $(notdir $@) : /g' > $@
+
+clean:
+	rm -f *.o *.d
+	rm -f libq2botcore.so
+
+-include $(libq2botcore.so_OBJECTS:.o=.d)
+

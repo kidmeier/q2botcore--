@@ -1,0 +1,95 @@
+Q2BotCore Source
+================
+
+README for release 1.0 of 4-Mar-1999
+====================================
+
+This is the first release of the Q2BotCore source code. The decision to
+release the code was based on numerous requests from users, and the fact
+that I don't have as much time to spend fixing bugs anymore. I will
+continue to work to improve the code, and hopefully make more releases
+in the future. However, this way you guys can work on the code and
+hopefully make it much better than I could ever do by myself.
+
+Unfortunately the code almost wholely uncommented. I would like to think
+that my coding style is reasonably easy to follow, but chances are that
+that's not the case. I hope that you are able to figure out what's going
+on at least in a general sense.
+
+The code is organized into 6 parts, convieniently stored in 6 separate
+diriectories.
+
+q2bot/    The source for q2bot.dll. Contains all the network and
+    gamestate code. This library attempts to provide
+    everything necessary to connect to the Q2 Server and
+    communicate, as well as providing a little glue to
+    better work with q2map.
+
+q2map/    The source for q2map.dll. Contains functions to load
+    .bsp files and do some geometric calculations.
+
+bot_test/  A source to a very simple test bot. This code was
+    previously released as an example with Q2BotCore.
+
+common/    The brains of BastardBot. A work in progress.
+
+bastard/  The command line interface for BastardBot.
+
+glbastard/  The GUI interface for BastardBot.
+
+
+The code compiles on Windows NT with Visual C++ 5.0. I have included
+the workspace and project files for MSVC++ to make it easier to get up
+and running for those that have MSVC++. In theory the code should
+compile on any Win32 C++ compiler.
+
+--
+Ben Swartzlander <swartz@rice.edu>
+http://www.telefragged.com/Q2BotCore/
+
+
+LEGAL ISSUES
+============
+
+In plain English:
+
+1. I don't promise that this software works.  (But if you find any bugs,
+   please let me know!)
+2. Don't write proxy/cheat bots!
+3. You can use this software for whatever else you want.  You don't have
+   to pay me.
+4. You may not pretend that you wrote this software.  If you use it in a
+   program, you must acknowledge somewhere in your documentation that
+   you've used the Q2BotCore code.
+
+In legalese:
+
+The author makes NO WARRANTY or representation, either express or implied,
+with respect to this software, its quality, accuracy, merchantability, or
+fitness for a particular purpose.  This software is provided "AS IS", and you,
+its user, assume the entire risk as to its quality and accuracy.
+
+This software is copyright (C) 1999, Ben Swartzlander.
+All Rights Reserved except as specified below.
+
+Permission is hereby granted to use, copy, modify, and distribute this
+software (or portions thereof) for any purpose, without fee, subject to these
+conditions:
+(1) Programs based on any part of this code may not act as network proxies
+between a Quake 2 Client and a Quake 2 Server.
+(2) If any part of the source code for this software is distributed, then this
+README file must be included, with this copyright and no-warranty notice
+unaltered; and any additions, deletions, or changes to the original files
+must be clearly indicated in accompanying documentation.
+(3) If only executable code is distributed, then the accompanying
+documentation must state that "this software is based in part on Q2BotCore".
+(4) Permission for use of this software is granted only if the user accepts
+full responsibility for any undesirable consequences; the authors accept
+NO LIABILITY for damages of any kind.
+
+These conditions apply to any software derived from or based on the Q2BotCore
+code, not just to the unmodified library.  If you use my work, you ought to
+acknowledge me.
+
+"Quake 2" is a trademark of Id Software, Inc.
+

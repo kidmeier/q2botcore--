@@ -1,0 +1,23 @@
+LIBRARY Q2BOT
+DESCRIPTION "Quake 2 Client Side Bot Library"
+EXPORTS
+	qbGetAPIVersion @1
+	qbStartup @2
+	qbConnect @3
+	qbBegin @4
+	qbIsConnected @5
+	qbDisconnect @6
+	qbShutdown @7
+	qbGetGameState @8
+	qbGetInventory @9
+	qbGetModelString @10
+	qbGetPlayerName @11
+	qbSynchConsole @12
+	qbAsynchConsole @13
+	qbMovementOrder @14
+	qbUpdateUserinfo @15
+	qbRecordDemo @16
+	qbPingTime @17
+	qbSetPrintFunc @18
+	qbGetBrushLocation @19
+	qbSetTraceLineFunc @20
